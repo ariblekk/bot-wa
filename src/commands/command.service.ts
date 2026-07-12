@@ -55,7 +55,7 @@ export class CommandService {
         break;
       case '!ping':
         await this.whatsappService.withTyping(from, () =>
-          this.whatsappService.sendMessage(from, 'Pong! 🏓 Bot is active.'),
+          this.whatsappService.sendMessage(from, 'Server is online ✅'),
         );
         break;
       case '!menu':

@@ -10,9 +10,13 @@ export class AppController {
     return 'Bot WA is running!';
   }
 
+  @Get('webhook')
+  getWebhook() {
+    return { status: 'active', method: 'POST' };
+  }
+
   @Post('webhook')
   async handleWebhook(@Body() payload: any) {
-    // Process async so webhook responds 200 OK immediately
     this.commandService.handleIncomingMessage(payload);
     return { status: 'success' };
   }
